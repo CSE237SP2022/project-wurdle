@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 What user stories were completed this iteration?
   - We were able to take in the file of WashU wordle words that we came up with
   - Created the word for the game 
@@ -12,16 +11,13 @@ What user stories do you intend to complete next iteration?
   - Implement the 5 guess rule
   
 Is there anything that you implemented but doesn't currently work?
-  -
+  - Nope, everything so far works correctly!
   
 What commands are needed to compile and run your code from the command line (or better yet, provide a script that people can use to run your program!)
-  -
+  - 
 
 file with words
 generate random word
 print empty board
 if whole word is correct - match
 otherwise ends when no more guesses
-=======
-Prints the gameboard with spaces for users words to be shown
->>>>>>> origin/print_board
