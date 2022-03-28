@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 What user stories were completed this iteration?
   - We were able to take in the file of WashU wordle words that we came up with
   - Created the word for the game 
@@ -21,3 +22,6 @@ generate random word
 print empty board
 if whole word is correct - match
 otherwise ends when no more guesses
+=======
+Prints the gameboard with spaces for users words to be shown
+>>>>>>> origin/print_board
