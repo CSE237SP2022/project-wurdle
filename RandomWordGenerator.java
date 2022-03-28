@@ -1,9 +1,7 @@
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -15,7 +13,7 @@ public class RandomWordGenerator{
        // try {
       //      getWord.MakeRandomWordGenerator();
        // } catch (FileNotFoundException e) {
-      //      // TODO Auto-generated catch block
+      //    
       //      e.printStackTrace();
      //   }
   //  }

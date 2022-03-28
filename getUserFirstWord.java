@@ -11,6 +11,7 @@ import java.util.Scanner;
         Scanner scanner = new Scanner(System.in);
         String userInputWord;
         userInputWord = scanner.nextLine(); 
+        scanner.close();
      //test below
         System.out.println("The user guessed: " + userInputWord); 
         return userInputWord; 
