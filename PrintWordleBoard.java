@@ -1,10 +1,10 @@
 
 
 public class PrintWordleBoard{
-    public static void main(String[] args) {
-        PrintWordleBoard wordleBoard = new PrintWordleBoard();
-        wordleBoard.board();
-    }
+    //public static void main(String[] args) {
+      //  PrintWordleBoard wordleBoard = new PrintWordleBoard();
+        //wordleBoard.board();
+   // }
     public void board(){
         //print top line of dashes
         for(int topLineDashes = 0; topLineDashes<6; topLineDashes++){

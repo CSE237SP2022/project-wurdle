@@ -10,15 +10,15 @@ import java.util.Scanner;
 
 
 public class RandomWordGenerator{
-    public static void main(String[] args){
-        RandomWordGenerator getWord = new RandomWordGenerator();
-        try {
-            getWord.MakeRandomWordGenerator();
-        } catch (FileNotFoundException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-    }
+  //  public static void main(String[] args){
+       // RandomWordGenerator getWord = new RandomWordGenerator();
+       // try {
+      //      getWord.MakeRandomWordGenerator();
+       // } catch (FileNotFoundException e) {
+      //      // TODO Auto-generated catch block
+      //      e.printStackTrace();
+     //   }
+  //  }
 
     public String MakeRandomWordGenerator() throws FileNotFoundException{
         String word = "null";
@@ -42,7 +42,15 @@ public class RandomWordGenerator{
         word = word_list.get((int)newIndex);
 
 
-    }
+    } 
+    System.out.println("Random WUrdle word: " + word); 
+    getUserFirstWord userInput = new getUserFirstWord();
+    String user_input = userInput.userInput();
+    compare c = new compare();
+        //var user_input = "hello";
+        //var generated_word = "hello";
+       c.compare_words(user_input, word);
+
 
     return word;
     }
