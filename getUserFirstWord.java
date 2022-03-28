@@ -7,7 +7,7 @@ import java.util.Scanner;
     // }
     // use args processor to get users first word
     public String userInput(){
-        System.out.println("Please type in your first guess -- all lowercase");
+        //System.out.println("Please type in your first guess -- all lowercase");
         Scanner scanner = new Scanner(System.in);
         String userInputWord;
         userInputWord = scanner.nextLine(); 
