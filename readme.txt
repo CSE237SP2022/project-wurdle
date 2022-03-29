@@ -14,7 +14,7 @@ Is there anything that you implemented but doesn't currently work?
   - Nope, everything so far works correctly!
   
 What commands are needed to compile and run your code from the command line (or better yet, provide a script that people can use to run your program!)
-  - 
+  - use the script ./script.sh
 
 file with words
 generate random word
