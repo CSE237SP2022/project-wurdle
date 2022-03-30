@@ -21,8 +21,14 @@ class wurdleTest {
 		c.compare_words(user_input, generated_word);
 		
 	}
+	//not created yet as this is part of iteration 2!
 	
-
-	//will add more when we can. these will including test words and the way the board prints if it is correct or not
+	//test board printing out correctly after each letter
+	//test correct letter in wrong space
+	//test correct letter in right space
+	//test completley incorrect letter
+	//test number of guesses alllowed
+	//test number of letters input
+	
 
 }
