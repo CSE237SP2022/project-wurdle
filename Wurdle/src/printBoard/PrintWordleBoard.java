@@ -4,9 +4,9 @@ package printBoard;
 public class PrintWordleBoard{
 
     public void board(){
-        //print top line of dashes
         for(int topLineDashes = 0; topLineDashes<6; topLineDashes++){
             System.out.print(" _");
+
         }
         System.out.println();
 
@@ -23,8 +23,8 @@ public class PrintWordleBoard{
 
             System.out.print("|"); //second lefthand vertical bar
             for (int emptySpotsGuesses = 0; emptySpotsGuesses<5; emptySpotsGuesses++){
-               
-                System.out.print("  "); //empty spaces REPLACE THESE WITH LETTER GUESSES
+                
+                System.out.print(" "); //empty spaces REPLACE THESE WITH LETTER GUESSES
                 
             }
             System.out.println(" |"); //second right hand vertical bar
