@@ -2,12 +2,10 @@ package getFirstWord;
 import java.util.Scanner;
 
  public class GetUserFirstWord{
-      //   public static void main(String[] args){
-      //   getUserFirstWord userInput = new getUserFirstWord();
-        // userInput.userInput();
-    // }
-    // use args processor to get users first word
+
+    // use scanner to get users first word
     public String userInput(){
+        //changed to the script but commented out just in case it needs to be used again 
         //System.out.println("Please type in your first guess -- all lowercase");
         Scanner scanner = new Scanner(System.in);
         String userInputWord;

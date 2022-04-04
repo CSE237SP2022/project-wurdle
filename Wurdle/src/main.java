@@ -1,4 +1,4 @@
-//main file that runs the code//main file that runs the code
+//main file that runs the code
 import randomWordGenerator.*;
 import printBoard.*;
 import compare.*;
@@ -10,7 +10,7 @@ import java.io.FileNotFoundException;
 public class main {
     public static void main(String[] args){
 
-         // then get random wurdle word
+         // Get the Wurdle word
          
         RandomWordGenerator getWord = new RandomWordGenerator();
          try {
@@ -19,18 +19,9 @@ public class main {
               } catch (FileNotFoundException e) {
                  e.printStackTrace();
              }
-        // get user input 
-
-       // getUserFirstWord userInput = new getUserFirstWord();
         
-       // String user_input = userInput.userInput();
+        // create the wudle word 
 
-        //compare board
-        //compare c = new compare(user_input, generated_word);
-       // compare c = new compare();
-       // c.compare_words(user_input, generated_word);
-
-        //start off with printing the board
         PrintWordleBoard wordleBoard = new PrintWordleBoard();
         wordleBoard.board();
 

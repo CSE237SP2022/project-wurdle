@@ -11,15 +11,6 @@ import getFirstWord.GetUserFirstWord;
 
 
 public class RandomWordGenerator{
-  //  public static void main(String[] args){
-       // RandomWordGenerator getWord = new RandomWordGenerator();
-       // try {
-      //      getWord.MakeRandomWordGenerator();
-       // } catch (FileNotFoundException e) {
-      //    
-      //      e.printStackTrace();
-     //   }
-  //  }
 
     public String MakeRandomWordGenerator() throws FileNotFoundException{
         String word = "null";
@@ -44,14 +35,17 @@ public class RandomWordGenerator{
 
 
     } 
+
     System.out.println("Random WUrdle word: " + word); 
+
+    // gets the user first word 
     GetUserFirstWord userInput = new GetUserFirstWord();
     String user_input = userInput.userInput();
-    CompareUserWord c = new CompareUserWord();
-        //var user_input = "hello";
-        //var generated_word = "hello";
-       c.compare_words(user_input, word);
 
+    //compare user first word to the generated word
+    CompareUserWord c = new CompareUserWord();
+
+       c.compare_words(user_input, word);
 
     return word;
     }
