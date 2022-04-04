@@ -32,11 +32,7 @@ public class RandomWordGenerator{
         double newIndex = Math.round(Math.random() * 21);
     
         word = word_list.get((int)newIndex);
-
-
     } 
-
-    System.out.println("Random WUrdle word: " + word);
 
     return word;
     }

@@ -15,6 +15,7 @@ public class main {
         RandomWordGenerator getWord = new RandomWordGenerator();
         try {
            String correctWord = getWord.MakeRandomWordGenerator();
+           System.out.println("Random WUrdle word: " + correctWord);
            GetUserFirstWord userInput = new GetUserFirstWord();
            String user_input = userInput.userInput();
        
