@@ -36,16 +36,7 @@ public class RandomWordGenerator{
 
     } 
 
-    System.out.println("Random WUrdle word: " + word); 
-
-    // gets the user first word 
-    GetUserFirstWord userInput = new GetUserFirstWord();
-    String user_input = userInput.userInput();
-
-    //compare user first word to the generated word
-    CompareUserWord c = new CompareUserWord();
-
-       c.compare_words(user_input, word);
+    System.out.println("Random WUrdle word: " + word);
 
     return word;
     }

@@ -13,8 +13,15 @@ public class main {
          // Get the Wurdle word
          
         RandomWordGenerator getWord = new RandomWordGenerator();
-         try {
-            getWord.MakeRandomWordGenerator();
+        try {
+           String correctWord = getWord.MakeRandomWordGenerator();
+           GetUserFirstWord userInput = new GetUserFirstWord();
+           String user_input = userInput.userInput();
+       
+           //compare user first word to the generated word
+           CompareUserWord c = new CompareUserWord();
+       
+           c.compare_words(user_input, correctWord);
               } catch (FileNotFoundException e) {
                  e.printStackTrace();
              }
