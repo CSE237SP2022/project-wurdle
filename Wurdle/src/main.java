@@ -14,8 +14,7 @@ public class main {
          
         RandomWordGenerator getWord = new RandomWordGenerator();
          try {
-             
-           getWord.MakeRandomWordGenerator();
+            getWord.MakeRandomWordGenerator();
               } catch (FileNotFoundException e) {
                  e.printStackTrace();
              }
