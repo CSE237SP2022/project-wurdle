@@ -4,6 +4,7 @@ import printBoard.*;
 import compare.*;
 import getFirstWord.GetUserFirstWord;
 import java.io.FileNotFoundException;
+import getNextUserGuess.getNextUserGuess;
 
 
 
@@ -19,7 +20,7 @@ public class main {
                  e.printStackTrace();
              }
         
-        // create the wudle word 
+        // create the wurdle word 
 
         PrintWordleBoard wordleBoard = new PrintWordleBoard();
         wordleBoard.board();
