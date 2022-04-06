@@ -3,26 +3,39 @@ package compare;
 public class CompareUserWord {
 
     public boolean compare_words(String user_input, String generated_word) {
-        for(int charInString=0; charInString<user_input.length(); charInString++){
-            if(user_input.charAt(charInString) == generated_word.charAt(charInString)){
-                System.out.println(user_input.charAt(charInString));
-            }
-            for(int index=0; index<generated_word.length(); index++){
-                
-            if(user_input.charAt(charInString) == generated_word.charAt(index)){
-                System.out.println(charInString);
+        boolean compareLetters;
+        int correctLetterCounter = 0;
+        for(int charInUser=0; charInUser<user_input.length(); charInUser++){
+            compareLetters = false;
 
+            System.out.print(user_input.charAt(charInUser) + ": ");
+
+            for(int charInGeneratedWord=0; charInGeneratedWord<generated_word.length(); charInGeneratedWord++){
+                
+                if(user_input.charAt(charInUser) == generated_word.charAt(charInGeneratedWord)){
+                    compareLetters = true;
+
+                    if(charInUser == charInGeneratedWord){
+                        ++correctLetterCounter;
+                        System.out.println("correct letter, correct space");
+                    }
+                    else{
+                        System.out.println("correct letter, wrong spot");
+                    }
+                }
             }
+
+            if (!compareLetters){
+             System.out.println("letter not used");
             }
-        }
-        boolean check; 
-        if(user_input.equals(generated_word)){
-            check = true;
-            System.out.println(check); 
+           
+        } 
+        if(correctLetterCounter == 5){
+            System.out.println("you are correct!");
             return true;
-        } else {
-            check = false; 
-            System.out.println(check); 
+        }
+        else{
+            System.out.println("you are incorrect, try again");
             return false;
         }
     }
