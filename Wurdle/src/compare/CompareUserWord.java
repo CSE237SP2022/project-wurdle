@@ -1,10 +1,17 @@
 package compare;
-
+import printKeyboard.*;
+import java.util.ArrayList;
 public class CompareUserWord {
 
     public boolean compare_words(String user_input, String generated_word) {
         boolean compareLetters;
         int correctLetterCounter = 0;
+
+
+
+       ArrayList<Character> incorrectLetterArr = new ArrayList<Character>();
+
+    
         for(int charInUser=0; charInUser<user_input.length(); charInUser++){
             compareLetters = false;
 
@@ -26,10 +33,14 @@ public class CompareUserWord {
             }
 
             if (!compareLetters){
-             System.out.println("letter not used");
+                incorrectLetterArr.add(user_input.charAt(charInUser));
+                
+                System.out.println("letter not used");
+
             }
            
         } 
+        PrintKeyboard.returnUserKeyboard(incorrectLetterArr);
         if(correctLetterCounter == 5){
             System.out.println("you are correct!");
             return true;
@@ -39,6 +50,7 @@ public class CompareUserWord {
             return false;
         }
     }
+
     
 
   }
