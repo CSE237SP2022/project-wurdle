@@ -41,7 +41,6 @@ class unitTests {
 
         String user_word = "bears";
         String generated_word = "bytes";
-        
         CompareUserWord compare = new CompareUserWord();
         boolean user_wrong = compare.compare_words(user_word, generated_word);
         String feedback = compare.allFeedback;
