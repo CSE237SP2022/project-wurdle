@@ -79,71 +79,68 @@ public class main {
     }
 
     public static boolean compare_words(String user_input, String generated_word) {
-        boolean compareLetters;
-        int correctLetterCounter = 0;
-
-        ArrayList<Character> incorrectLetterArr = new ArrayList<Character>();
-
+            String allFeedback = " ";
+            boolean compareLetters;
+            int correctLetterCounter = 0;
+            String correctLetterAndSpot = "correct letter, correct space";
+            String incorrectLetterAndSpot = "letter not used";
+            String correctLetterWrongSpot = "correct letter, wrong space";
+            String currentFeedback;
+            boolean correctSpot;
     
-        for(int charInUser=0; charInUser<user_input.length(); charInUser++){
-            compareLetters = false;
-
-            System.out.print(user_input.charAt(charInUser) + ": ");
-
-            for(int charInGeneratedWord=0; charInGeneratedWord<generated_word.length(); charInGeneratedWord++){
-                
-                if(user_input.charAt(charInUser) == generated_word.charAt(charInGeneratedWord)){
-                    compareLetters = true;
-
-                    if(charInUser == charInGeneratedWord){
-                        ++correctLetterCounter;
-                        System.out.println("correct letter, correct space");
+    
+           ArrayList<Character> incorrectLetterArr = new ArrayList<Character>();
+    
+           //multipleLetters = false;
+            for(int charInUser=0; charInUser<user_input.length(); charInUser++){
+                compareLetters = false;
+                correctSpot = false;
+                currentFeedback = "";
+                System.out.print(user_input.charAt(charInUser) + ": ");
+                allFeedback += (user_input.charAt(charInUser)) + ": ";
+                for(int charInGeneratedWord=0; charInGeneratedWord<generated_word.length(); charInGeneratedWord++){
+              
+                    if((user_input.charAt(charInUser) == generated_word.charAt(charInGeneratedWord))){
+                        
+                        compareLetters = true;
+                    
+                        if((charInUser == charInGeneratedWord)){
+                            ++correctLetterCounter;
+                            allFeedback += correctLetterAndSpot + System.lineSeparator();
+                            currentFeedback = correctLetterAndSpot + System.lineSeparator();
+                            correctSpot = true;
+                          
+                            
+                        }
+                        else if(!correctSpot){
+                            allFeedback += correctLetterWrongSpot + System.lineSeparator();
+                            currentFeedback = correctLetterWrongSpot + System.lineSeparator();
+                        }
+                        
                     }
-                    else{
-                        System.out.println("correct letter, wrong spot");
-                    }
+                    
+                    
                 }
+    
+                if (!compareLetters){
+                    incorrectLetterArr.add(user_input.charAt(charInUser));
+                    allFeedback += incorrectLetterAndSpot + System.lineSeparator();
+                    System.out.println(incorrectLetterAndSpot);
+    
+                }
+                System.out.print(currentFeedback);
+               
+            } 
+            PrintKeyboard.returnUserKeyboard(incorrectLetterArr);
+            if(correctLetterCounter == 5){
+                System.out.println("you are correct!");
+                return true;
             }
-
-            if (!compareLetters){
-                incorrectLetterArr.add(user_input.charAt(charInUser));
+            else{
+                System.out.println("you are incorrect, try again");
                 
-                System.out.println("letter not used");
-
+                return false;
             }
-           
-        } 
-        PrintKeyboard.returnUserKeyboard(incorrectLetterArr);
-        if(correctLetterCounter == 5){
-            System.out.println("you are correct!");
-            return true;
-        }
-        else{
-            System.out.println("you are incorrect, try again");
-            return false;
-        }
-    }
-
-    public static void returnUserKeyboard(ArrayList<Character> incorrectLetter){
-        String words = new String("qwertyuiop\nasdfghjkl\nzxcvbnm\n");
-        ArrayList<Character> keyboardArr = new ArrayList<Character>();
- 
-        for(int i = 0; i<words.length(); i++){
-            keyboardArr.add(words.charAt(i));
-        }
-   
-        for (int j=0; j<incorrectLetter.size(); j++){
-            for(int i=0; i<keyboardArr.size(); i++){
-                if(incorrectLetter.get(j) == keyboardArr.get(i)){
-                    keyboardArr.set(i,'-');
-                }
-            }
-        }
-        for (int i=0; i<keyboardArr.size(); i++){
-            System.out.print(keyboardArr.get(i));
-            
-        
-        }
         
     }
 
