@@ -45,7 +45,6 @@ class unitTests {
         boolean user_wrong = compare.compare_words(user_word, generated_word);
         String feedback = compare.allFeedback;
         String correct_feedback = "b: correct letter, correct space\ne: correct letter, wrong space\na: letter not used\nr: letter not used\ns: correct letter, correct space";
-        
         assertEquals(user_wrong,correct_feedback);
 
     }
