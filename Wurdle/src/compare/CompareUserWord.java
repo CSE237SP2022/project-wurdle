@@ -31,14 +31,14 @@ public class CompareUserWord {
                 
                     if((charInUser == charInGeneratedWord)){
                         ++correctLetterCounter;
-                        allFeedback += correctLetterAndSpot;
+                        allFeedback += correctLetterAndSpot + System.lineSeparator();
                         currentFeedback = correctLetterAndSpot + System.lineSeparator();
                         correctSpot = true;
                       
                         
                     }
                     else if(!correctSpot){
-                        allFeedback += correctLetterWrongSpot;
+                        allFeedback += correctLetterWrongSpot + System.lineSeparator();
                         currentFeedback = correctLetterWrongSpot + System.lineSeparator();
                     }
                     
@@ -50,10 +50,10 @@ public class CompareUserWord {
             if (!compareLetters){
                 incorrectLetterArr.add(user_input.charAt(charInUser));
                 allFeedback += incorrectLetterAndSpot + System.lineSeparator();
-                System.out.print(incorrectLetterAndSpot);
+                System.out.println(incorrectLetterAndSpot);
 
             }
-            System.out.println(currentFeedback);
+            System.out.print(currentFeedback);
            
         } 
         PrintKeyboard.returnUserKeyboard(incorrectLetterArr);
