@@ -3,7 +3,7 @@ import printKeyboard.*;
 import java.util.ArrayList;
 public class CompareUserWord {
 
-    String allFeedback = " ";
+    public String allFeedback = " ";
     public boolean compare_words(String user_input, String generated_word) {
         boolean compareLetters;
         int correctLetterCounter = 0;
