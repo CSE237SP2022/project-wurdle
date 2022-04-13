@@ -31,7 +31,7 @@ What user stories do you intend to complete next iteration?
   - Implement the 6 guess rule
   
 Is there anything that you implemented but doesn't currently work?
-  - so far, it should all work! we were having some issues with getting multiple guesses in a row, but it should work now!
+  - if you do not get the correct guess, it tells you it ran out of guesses but does not end yet. we are working on it!
   
 What commands are needed to compile and run your code from the command line (or better yet, provide a script that people can use to run your program!)
   - use the script ./script.sh
