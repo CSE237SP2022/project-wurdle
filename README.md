@@ -21,7 +21,7 @@ What commands are needed to compile and run your code from the command line (or 
 ## Iteration 2:
 
 What user stories were completed this iteration?
-  - Worked on getting the second guess from the user
+  - Worked on getting multiple guesses in a row from the user, instead of a single guess like last iteration
   - Give feedback in the form of words about which letters are correct and incorrect
   - Display the letters remaining after each guess
 
@@ -31,7 +31,7 @@ What user stories do you intend to complete next iteration?
   - Implement the 6 guess rule
   
 Is there anything that you implemented but doesn't currently work?
-  - although everything currently in the code works correctly, we were working on implementing a scanner for number of consecutive guesses, and had to move it to the next iteration to continue working on it
+  - so far, it should all work! we were having some issues with getting multiple guesses in a row, but it should work now!
   
 What commands are needed to compile and run your code from the command line (or better yet, provide a script that people can use to run your program!)
   - use the script ./script.sh
