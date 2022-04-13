@@ -1,5 +1,5 @@
 # project-wurdle
-
+## Iteration 1:
 What user stories were completed this iteration?
   - We were able to take in the file of WashU wordle words that we came up with
   - Created the word for the game 
@@ -10,7 +10,7 @@ What user stories were completed this iteration?
 What user stories do you intend to complete next iteration?
   - Figure out a way to display if the letter is correct and when the letter is correct and in the right place
   - Also after this display to the user, use the scanner to get there next guess
-  - Implement the 5 guess rule
+  - Implement the 6 guess rule
   
 Is there anything that you implemented but doesn't currently work?
   - Nope, everything so far works correctly!
@@ -18,8 +18,21 @@ Is there anything that you implemented but doesn't currently work?
 What commands are needed to compile and run your code from the command line (or better yet, provide a script that people can use to run your program!)
   - use the script ./script.sh
 
-file with words
-generate random word
-print empty board
-if whole word is correct - match
-otherwise ends when no more guesses
+## Iteration 2:
+
+What user stories were completed this iteration?
+  - Worked on getting multiple guesses in a row from the user, instead of a single guess like last iteration
+  - Give feedback in the form of words about which letters are correct and incorrect
+  - Display the letters remaining after each guess
+
+What user stories do you intend to complete next iteration?
+  - Display in the board with x's and -'s the feedback for each word
+  - implement five letter cap
+  - Implement the 6 guess rule
+  
+Is there anything that you implemented but doesn't currently work?
+  - so far, it should all work! we were having some issues with getting multiple guesses in a row, but it should work now!
+  
+What commands are needed to compile and run your code from the command line (or better yet, provide a script that people can use to run your program!)
+  - use the script ./script.sh
+
