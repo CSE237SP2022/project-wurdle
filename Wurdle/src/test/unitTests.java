@@ -1,6 +1,6 @@
 //unit tests here
 
-package tests;
+package test;
 
 import randomWordGenerator.*;
 import printBoard.*;
@@ -9,13 +9,14 @@ import printKeyboard.*;
 import getFirstWord.GetUserFirstWord;
 
 import static org.junit.jupiter.api.Assertions.*;
-
+import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-class unitTests {
-
+public class unitTests {
+    
     @Test
-    void user_right_test() {
+    public void user_right_test() {
 
         String user_word = "bears";
         String generated_word = "bears";

@@ -1,5 +1,5 @@
 #!/bin/bash
-javac main.java      
+javac CreateWurdleGame.java      
 clear
-java main
+java CreateWurdleGame
 
