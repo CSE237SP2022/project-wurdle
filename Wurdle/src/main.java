@@ -22,14 +22,20 @@ public class main {
                 int x = 1;
                 System.out.println("Welcome to Wurdle! Please enter your guesses in all lowercase :)");
                 //Create boolean to see if use guesses correctly
+          
                 Boolean UserWordCorrect = false; 
+                
+                
                 //While loop for the guess (goes for 6 times)
 
                 while (UserWordCorrect == false){
                     UserWordCorrect = round(x, correctWord);
                     x++;
+                    if (x>6 || UserWordCorrect){
                     gameOver(x, UserWordCorrect, correctWord);
-
+                    break;
+                    }
+                     
                 }
 
              }
@@ -57,13 +63,15 @@ public class main {
     public static void gameOver(int x, boolean UserWordCorrect, String correctWord){
         //Method to see if game should be ended 
         //If they ran out of guesses
-        if(x>6 && UserWordCorrect != true){
+         if (x>6 && UserWordCorrect != true){
          System.out.println("Sorry, you ran out of guesses. The correct word was " + correctWord);
+         UserWordCorrect = true; 
+         System.out.println("GAME OVER"); 
         }
         //User guessed the correct word, then it is time to exit the while loop 
-        if (UserWordCorrect){
+        else if (UserWordCorrect){
         x=10;
-        System.out.println("Congrats! GAME OVER");
+        System.out.println("CONGRATS! GAME OVER");
         }
   
     }

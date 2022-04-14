@@ -29,7 +29,7 @@ public class RandomWordGenerator{
            
         }
         fileReader.close();
-        double newIndex = Math.round(Math.random() * 21);
+        double newIndex = Math.round(Math.random() * 20);
     
         word = word_list.get((int)newIndex);
     } 
