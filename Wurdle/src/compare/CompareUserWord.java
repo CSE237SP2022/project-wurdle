@@ -16,7 +16,7 @@ public class CompareUserWord {
 
        ArrayList<Character> incorrectLetterArr = new ArrayList<Character>();
 
-       //multipleLetters = false;
+     
         for(int charInUser=0; charInUser<user_input.length(); charInUser++){
             compareLetters = false;
             correctSpot = false;
