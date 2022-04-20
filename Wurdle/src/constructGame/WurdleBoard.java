@@ -1,35 +1,34 @@
-
-package printBoard;
+package constructGame;
 
 import java.util.ArrayList;
 
-public class PrintWordleBoard {
-
-    public static void board(ArrayList<String> guesses, ArrayList<String> feedback){
-
+public class WurdleBoard {
+    public void printBoard(ArrayList<String> guesses, ArrayList<String> feedback){
+        System.out.println(feedback);
+        System.out.println(guesses);
         String spaces = "     ";
         printTop();
 
         for(int numGuessesAllowed = 0; numGuessesAllowed<6; numGuessesAllowed++){
-            emptySpaceLetterGuesses(spaces);
+            printGuessesAndFeedback(spaces);
 
             if(numGuessesAllowed<guesses.size()&&numGuessesAllowed<feedback.size()){
-                emptySpaceLetterGuesses(guesses.get(numGuessesAllowed));
-                emptySpaceLetterGuesses(feedback.get(numGuessesAllowed));
+                printGuessesAndFeedback(guesses.get(numGuessesAllowed));
+                printGuessesAndFeedback(feedback.get(numGuessesAllowed));
             }
             else{
-                emptySpaceLetterGuesses(spaces);
-                emptySpaceLetterGuesses(spaces);
+                printGuessesAndFeedback(spaces);
+                printGuessesAndFeedback(spaces);
             }
-    
-           
-            bottomBorder();
-            verticalBars(true);
+
+        
+            printBottom();
+            printVerticalBars(true);
         }
     }
 
 
-    public static void verticalBars(Boolean spacing){
+    public void printVerticalBars(Boolean spacing){
         if(!spacing){
             System.out.print("|");
         }
@@ -37,16 +36,16 @@ public class PrintWordleBoard {
             System.out.println(" |");
         }
     }
-    public static void emptySpaceLetterGuesses(String boardFiller){
-        verticalBars(false);
+    public void printGuessesAndFeedback(String boardFiller){
+        printVerticalBars(false);
         for (int emptySpotsGuesses = 0; emptySpotsGuesses<5; emptySpotsGuesses++){
             System.out.print(" "+ boardFiller.charAt(emptySpotsGuesses)); //empty spaces REPLACE THESE WITH LETTER GUESSES
- 
+
         }
-        verticalBars(true);
-      
+        printVerticalBars(true);
+    
     }
-    public static void printTop(){
+    public void printTop(){
         for(int topLineDashes = 0; topLineDashes<6; topLineDashes++){
             System.out.print(" _");
 
@@ -54,15 +53,14 @@ public class PrintWordleBoard {
         System.out.println();
     }
 
-    public static void bottomBorder(){
+    public void printBottom(){
         for (int separatorLines = 0; separatorLines<5; separatorLines++){
             if (separatorLines == 0){
                 System.out.print("| _"); 
             }
             else{
-             System.out.print(" _"); 
+            System.out.print(" _"); 
             }
-         }
+        }
     }
-
 }

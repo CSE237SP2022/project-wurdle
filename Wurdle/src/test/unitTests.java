@@ -50,6 +50,19 @@ public class unitTests {
 
     }
 
+@Test
+    void testInvalidInputTooFewLetters() {
+
+        String user_word = "be";
+        String generated_word = "bears";
+        userPlay.GetUserFirstWord smallWord = new userPlay.GetUserFirstWord();
+        boolean user_wrong = smallWord.invalidInput(user_word, generated_word);
+        String feedback = smallWord.allFeedback;
+        String correct_feedback = "b: correct letter, correct space\ne: correct letter, wrong space\na: letter not used\nr: letter not used\ns: correct letter, correct space";
+        assertEquals(user_wrong,correct_feedback);
+
+    }
+    
 
 
 }
