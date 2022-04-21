@@ -36,3 +36,16 @@ Is there anything that you implemented but doesn't currently work?
 What commands are needed to compile and run your code from the command line (or better yet, provide a script that people can use to run your program!)
   - use the script ./script.sh
 
+## Iteration 3:
+What user stories were completed this iteration?
+  - Displayed feedback in the board as well as in word form for the users to visually see and read their correct/incorrect guesses
+  - users can only guess words with five letters at a time
+  - users cannot repeat the same word for multiple guesses
+  - users can only guess six times
+  
+Is there anything that you implemented but doesn't currently work?
+  - It should all work at this point!
+  
+What commands are needed to compile and run your code from the command line (or better yet, provide a script that people can use to run your program!)
+  - use the script ./script.sh
+
