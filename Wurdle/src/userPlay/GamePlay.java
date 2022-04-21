@@ -43,18 +43,18 @@ public class GamePlay {
         this.arrlistIterator = 0;  
         if(roundIterator == 1 && this.userInputWord.length() == 5){
             guesses.add(this.userInputWord);
-            System.out.println("in first round");
+           // System.out.println("in first round");
         }
         while (guesses.size()>arrlistIterator && roundIterator>1){
-            System.out.println("round iterator " + roundIterator); 
-            System.out.println("arrlist iterator " + arrlistIterator);
+           // System.out.println("round iterator " + roundIterator); 
+           // System.out.println("arrlist iterator " + arrlistIterator);
             alreadyUsedString = guesses.get(arrlistIterator); 
-            System.out.println("already used string in getuserinput " + alreadyUsedString);
+            //System.out.println("already used string in getuserinput " + alreadyUsedString);
             Boolean inputIsValid = checkValidInput();
             this.arrlistIterator++;
-            System.out.println(guesses.size()); 
+            //System.out.println(guesses.size()); 
             if ((roundIterator - arrlistIterator == 1)){
-                System.out.println("in if statement");
+              //  System.out.println("in if statement");
                 if (inputIsValid){
                     guesses.add(this.userInputWord); 
                 }
@@ -68,7 +68,7 @@ public class GamePlay {
     public Boolean checkValidInput(){
    
         while (this.userInputWord.equals(alreadyUsedString)){
-            System.out.println("already used string in checkvalid input " + alreadyUsedString);
+            //System.out.println("already used string in checkvalid input " + alreadyUsedString);
             System.out.println("try again, must be a unique word");
             this.userInputWord = useScanner();
            
@@ -139,7 +139,7 @@ public class GamePlay {
         this.currentFeedback = updateWithCorrectOrIncorrect + System.lineSeparator();
         if(correct){
             this.letterInCorrectSpot = true;
-            Character.toString((this.userInputWord.charAt(charInUser)));
+            this.keyboardFeedback += Character.toString((this.userInputWord.charAt(charInUser)));
             this.correctLetterCounter ++;
         }
         else{
