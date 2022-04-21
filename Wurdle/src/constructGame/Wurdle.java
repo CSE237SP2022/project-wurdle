@@ -87,9 +87,7 @@ public class Wurdle {
     public void readWurdleWordsFromFile() throws FileNotFoundException{
  
         File inputFile = new File("src/constructGame/word_list.txt");
-        System.out.println("hello");
         if (inputFile.exists()){
-            System.out.println("in exist");
             Scanner fileReader = new Scanner(inputFile);
 
             for(int i = 0; i<21; i++){
