@@ -39,7 +39,7 @@ public class WurdleBoard {
     public void printGuessesAndFeedback(String boardFiller){
         printVerticalBars(false);
         for (int emptySpotsGuesses = 0; emptySpotsGuesses<5; emptySpotsGuesses++){
-            System.out.print(" "+ boardFiller.charAt(emptySpotsGuesses)); //empty spaces REPLACE THESE WITH LETTER GUESSES
+            System.out.print(" "+ boardFiller.charAt(emptySpotsGuesses)); 
 
         }
         printVerticalBars(true);
