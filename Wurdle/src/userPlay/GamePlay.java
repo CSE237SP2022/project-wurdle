@@ -39,28 +39,28 @@ public class GamePlay {
      public String getUserInput(int roundIterator, ArrayList<String> guesses){
 
         this.userInputWord = useScanner().toLowerCase();
-        
         this.arrlistIterator = 0;  
-        if(roundIterator == 1 && this.userInputWord.length() == 5){
+        if(roundIterator == 1 && this.userInputWord.length() == (5)){
             guesses.add(this.userInputWord);
-           // System.out.println("in first round");
         }
-        while (guesses.size()>arrlistIterator && roundIterator>1){
-           // System.out.println("round iterator " + roundIterator); 
-           // System.out.println("arrlist iterator " + arrlistIterator);
-            alreadyUsedString = guesses.get(arrlistIterator); 
-            //System.out.println("already used string in getuserinput " + alreadyUsedString);
-            Boolean inputIsValid = checkValidInput();
-            this.arrlistIterator++;
-            //System.out.println(guesses.size()); 
-            if ((roundIterator - arrlistIterator == 1)){
-              //  System.out.println("in if statement");
-                if (inputIsValid){
-                    guesses.add(this.userInputWord); 
-                }
-                break;}
-       
-        }
+        else{
+             while (guesses.size()>arrlistIterator && roundIterator>1){
+                alreadyUsedString = guesses.get(arrlistIterator); 
+                Boolean inputIsValid = checkValidInput();
+                this.arrlistIterator++;
+                if ((roundIterator - arrlistIterator == 1)){
+                    if (inputIsValid){
+                        guesses.add(this.userInputWord); 
+                    }
+                    break;}
+            }
+            if (roundIterator == 1){
+                boolean inputIsValidRound1 = checkValidInput();
+                    if (inputIsValidRound1){
+                        guesses.add(this.userInputWord); 
+                    }
+            }
+         }
         return this.userInputWord; 
 
     }
@@ -68,7 +68,6 @@ public class GamePlay {
     public Boolean checkValidInput(){
    
         while (this.userInputWord.equals(alreadyUsedString)){
-            //System.out.println("already used string in checkvalid input " + alreadyUsedString);
             System.out.println("try again, must be a unique word");
             this.userInputWord = useScanner();
            
