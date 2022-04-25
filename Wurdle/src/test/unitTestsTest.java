@@ -1,47 +1,53 @@
-//unit tests here
-
 package test;
 
-import constructGame.*;
-import userPlay.*;
- 
+import org.junit.jupiter.api.BeforeEach;
+
+import constructGame.Wurdle;
+import constructGame.WurdleBoard;
+import userPlay.GamePlay;
+
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.beans.Transient;
+import java.util.ArrayList;
+import java.util.Scanner;
 
-import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.jupiter.api.Test;
-import org.junit.Test;
 
-public class unitTests {
+public class unitTestsTest {
+	@BeforeEach
+	void setup() {
+        Scanner scan = new Scanner(System.in);
+        Wurdle game = new Wurdle(scan);
+        game.play();
+	}
     
     @Test
     public void user_right_test() {
-
+    	//fix 
         String user_word = "bears";
         String generated_word = "bears";
-        CompareUserWord compare = new CompareUserWord();
-        boolean user_right = compare.compare_words(user_word, generated_word);
+      
         assertEquals(user_right, true);
 
     }
 
     @Test
     void user_wrong_test() {
-
+    	//fix
         String user_word = "bears";
         String generated_word = "bytes";
 
-        CompareUserWord compare = new CompareUserWord();
-        boolean user_wrong = compare.compare_words(user_word, generated_word);
+        
+        
         assertEquals(user_wrong, true);
 
     }
 
     @Test
     void feedback_test() {
-
+    	//fix
         String user_word = "bears";
         String generated_word = "bytes";
 
@@ -56,7 +62,7 @@ public class unitTests {
 
     @Test
         void testInvalidInputTooFewLetters() {
-
+    		//fix
             String user_word = "be";
             String generated_word = "bears";
 
@@ -69,45 +75,40 @@ public class unitTests {
 
         }
 
-    @Test 
-        void testCheckValidInput(){
+    @Test
+        void testCheckForNoDups(){
+    		
+            
+    	}
 
-            String user_word = 'betes';
-            String generated_word = "bytes";
 
-            boolean valid_input = GamePlay.checkValidInput(user_word, generated_word);
-
-            AssertEquals(false, valid_input);       
-    }
-
-    //how to test print methods?
-    @Test 
+    @Test
         void testupdateFeedback(){
             String updateWithCorrectOrIncorrect ="hello";
             Boolean correct = false;
             int charInUser = 1;
 
-            String correct_allFeedback = '--FILL IN---';
+            //String correct_allFeedback = '--FILL IN---';
 
-            AssertEquals(correct_allFeedback, GamePlay.allFeedback)
+            //AssertEquals(correct_allFeedback, GamePlay.allFeedback)
                     
-    }
+    	}
 
     @Test 
         void testFalseComparison(){
-            ArrayList<Character> incorrectLettersm ='--FILL IN---';
-            char userWordCharacter = '--FILL IN---';
+            //ArrayList<Character> incorrectLettersm ="--FILL IN---";
+           // char userWordCharacter ="--FILL IN---";
             
-            String correct_allFeedback = '--FILL IN---';
+           // String correct_allFeedback = "--FILL IN---";
 
-            AssertEquals(correct_allFeedback, GamePlay.allFeedback)
-    }
+            //AssertEquals(correct_allFeedback, GamePlay.allFeedback)
+    	}
 
     @Test 
         void testGameOver(){
             //print method 
     
-    }
+    	}
 
     @Test 
         void runNextRound(){
@@ -126,7 +127,7 @@ public class unitTests {
 
 
     @Test 
-        void tesReturnUserKeyboard(){
+        void testReturnUserKeyboard(){
            
     }
-    
+}
