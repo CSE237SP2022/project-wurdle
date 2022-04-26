@@ -76,7 +76,7 @@ public class TestWurdleCreation {
    		int originalWordList = game.word_list.size();
    		game.readWurdleWordsFromFile();
    		int addedToWordList = game.word_list.size();
-   		assertEquals(originalWordList+21, addedToWordList);
+   		assertEquals(originalWordList+16, addedToWordList);
           
    }
 
