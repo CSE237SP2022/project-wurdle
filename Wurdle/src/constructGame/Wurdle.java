@@ -50,7 +50,7 @@ public class Wurdle {
                 isUserWordCorrect = runNextRound(roundIterator);
                 roundIterator++;
                 if (roundIterator > 6 || isUserWordCorrect) {
-                    gameOver(roundIterator);
+                    gameWonOrLost(roundIterator);
                     break;
                 }
             }
@@ -61,15 +61,18 @@ public class Wurdle {
         }
     }
 
-    public void gameOver(int roundIterator) {
+    public Boolean gameWonOrLost(int roundIterator) {
 
-        if (roundIterator > 6 && !isUserWordCorrect) {
+        if (roundIterator > 6 && !this.isUserWordCorrect) {
             System.out.println("Sorry, you ran out of guesses. The correct word was " + randomWurdleWord);
+            return false;
         }
-        if (isUserWordCorrect) {
+        if (this.isUserWordCorrect) {
             roundIterator = 10;
             System.out.println("Congrats! GAME OVER");
+            return true;
         }
+        return false;
 
     }
 
