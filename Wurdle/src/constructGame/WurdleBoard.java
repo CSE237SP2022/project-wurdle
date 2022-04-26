@@ -3,9 +3,8 @@ package constructGame;
 import java.util.ArrayList;
 
 public class WurdleBoard {
+	
     public void printBoard(ArrayList<String> guesses, ArrayList<String> feedback){
-        System.out.println(feedback);
-        System.out.println(guesses);
         String spaces = "     ";
         printTop();
 
@@ -19,9 +18,8 @@ public class WurdleBoard {
             else{
                 printGuessesAndFeedback(spaces);
                 printGuessesAndFeedback(spaces);
-            }
+            } 
 
-        
             printBottom();
             printVerticalBars(true);
         }
@@ -36,6 +34,8 @@ public class WurdleBoard {
             System.out.println(" |");
         }
     }
+    
+    
     public void printGuessesAndFeedback(String boardFiller){
         printVerticalBars(false);
         for (int emptySpotsGuesses = 0; emptySpotsGuesses<5; emptySpotsGuesses++){
@@ -45,6 +45,8 @@ public class WurdleBoard {
         printVerticalBars(true);
     
     }
+    
+    
     public void printTop(){
         for(int topLineDashes = 0; topLineDashes<6; topLineDashes++){
             System.out.print(" _");
@@ -62,5 +64,31 @@ public class WurdleBoard {
             System.out.print(" _"); 
             }
         }
+    } 
+    
+    
+    public void updateUserKeyboard(ArrayList<Character> incorrectLetters){
+        String alphabet = new String("qwertyuiop\nasdfghjkl\nzxcvbnm\n");
+        ArrayList<Character> updatedUserKeyboard = new ArrayList<Character>();
+
+        System.out.println("Letters remaining are: ");
+        for(int i = 0; i<alphabet.length(); i++){
+            updatedUserKeyboard.add(alphabet.charAt(i));
+        }
+   
+        for (int j=0; j<incorrectLetters.size(); j++){
+            for(int i=0; i<updatedUserKeyboard.size(); i++){
+                if(incorrectLetters.get(j) == updatedUserKeyboard.get(i)){
+                    updatedUserKeyboard.set(i,'-');
+                }
+            }
+        }
+        for (int i=0; i<updatedUserKeyboard.size(); i++){
+            System.out.print(updatedUserKeyboard.get(i));
+            
+        
+        }
+        System.out.println("");
+        
     }
 }
