@@ -93,7 +93,7 @@ public class Wurdle {
         if (inputFile.exists()){
             Scanner fileReader = new Scanner(inputFile);
 
-            for(int i = 0; i<21; i++){
+            for(int i = 0; i<15; i++){
                 String nextWord = fileReader.nextLine();
                     this.word_list.add(nextWord);
             }
@@ -106,7 +106,7 @@ public class Wurdle {
     }
 
     public void chooseRandomWord(){
-        double newIndex = Math.round(Math.random() * 20);
+        double newIndex = Math.round(Math.random() * 15);
         this.randomWurdleWord = this.word_list.get((int)newIndex);
         System.out.println("new word" + this.randomWurdleWord);
     }
