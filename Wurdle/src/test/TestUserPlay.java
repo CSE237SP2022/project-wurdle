@@ -21,7 +21,7 @@ import java.util.Scanner;
 
 import org.junit.jupiter.api.Test;
 
-public class unitTestsTest {
+public class TestUserPlay {
 	private Wurdle game;
 	private Scanner scan;
 	private GamePlay testPlay;
