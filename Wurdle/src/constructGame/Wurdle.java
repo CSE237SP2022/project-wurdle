@@ -44,8 +44,11 @@ public class Wurdle {
             
             int roundIterator = 1;
             System.out.println("Welcome to Wurdle! Please enter your guesses in all lowercase :)");
-            System.out.println("Each time you make a guess, your feedback will be represented in terms "
-            		+ "of the correctness of each letter as well as a visual representation on the board.");
+            System.out.println("Each time you make a guess, your feedback will be represented in words "
+                    + "explaining if the letter is correct or not as well as a visual representation on the board."+
+                    "On the board, the feedback will consist of 'x' and '-' where 'x' is an incorrect letter and '-' is "
+                    + "a letter that is used elsewhere in the word. If the letter is in the correct spot"
+                    +" the letter will be given as feedback instead of an 'x' or '-'.");
             
             while (!isUserWordCorrect) {
                 isUserWordCorrect = runNextRound(roundIterator);
