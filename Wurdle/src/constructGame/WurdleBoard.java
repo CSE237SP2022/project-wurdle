@@ -26,8 +26,8 @@ public class WurdleBoard {
     }
 
 
-    public void printVerticalBars(Boolean spacing){
-        if(!spacing){
+    public void printVerticalBars(Boolean needsSpacing){
+        if(!needsSpacing){
             System.out.print("|");
         }
         else{
@@ -36,10 +36,10 @@ public class WurdleBoard {
     }
     
     
-    public void printGuessesAndFeedback(String boardFiller){
+    public void printGuessesAndFeedback(String boardContents){
         printVerticalBars(false);
         for (int emptySpotsGuesses = 0; emptySpotsGuesses<5; emptySpotsGuesses++){
-            System.out.print(" "+ boardFiller.charAt(emptySpotsGuesses)); 
+            System.out.print(" "+ boardContents.charAt(emptySpotsGuesses)); 
 
         }
         printVerticalBars(true);

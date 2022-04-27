@@ -14,10 +14,10 @@ public class GamePlay {
      public String currentFeedback;
 
      public String userInputWord;
-     public String alreadyUsedString;
-     public int arrlistIterator;
+     public String previousGuess;
+     public int guessesIndex;
      public Scanner scan;
-     public Boolean compareLetters;
+     public Boolean sameLetter;
      public int correctLetterCounter;
      public Boolean letterInCorrectSpot;
      public ArrayList<Character> incorrectLetters;
@@ -27,11 +27,11 @@ public class GamePlay {
  
 
     public GamePlay(Scanner scan, ArrayList<String> userGuesses, ArrayList<String> userFeedback, ArrayList<Character> incorrectLetters){
-        this.alreadyUsedString="";
+        this.previousGuess="";
         this.userInputWord = "";
-        this.arrlistIterator = 0;
+        this.guessesIndex = 0;
         this.scan=scan;
-        this.compareLetters=false;
+        this.sameLetter=false;
         this.correctLetterCounter = 0;
         this.letterInCorrectSpot = false;
         this.incorrectLetters= incorrectLetters;
@@ -41,7 +41,7 @@ public class GamePlay {
         this.userGuesses = userGuesses;
     }
 
-    public Boolean userSidePlay(int roundIterator, String randomWurdleWord) {
+    public Boolean didUserGuessCorrectly(int roundIterator, String randomWurdleWord) {
     	makeGuesses(roundIterator);
         
         System.out.println("You guessed: " + this.userGuesses.get(roundIterator-1)); 
@@ -58,24 +58,24 @@ public class GamePlay {
      public ArrayList<String> makeGuesses(int roundIterator){
         useScanner();
         
-        this.arrlistIterator = 0;  
+        this.guessesIndex = 0;  
 
         if(roundIterator == 1 && this.userInputWord.length() == (5)){
             addUserGuess();            
         }  
         else{  
         	
-             while(this.userGuesses.size()>this.arrlistIterator && roundIterator>1){
+             while(this.userGuesses.size()>this.guessesIndex && roundIterator>1){
             	 
-                alreadyUsedString = this.userGuesses.get(arrlistIterator); 
+                previousGuess = this.userGuesses.get(guessesIndex); 
                 Boolean inputIsValid = checkValidInput();
                 
                 while(!inputIsValid) {
                 	inputIsValid=checkValidInput();
                 }
                 
-                this.arrlistIterator++;
-                if ((roundIterator - this.arrlistIterator == 1)){
+                this.guessesIndex++;
+                if ((roundIterator - this.guessesIndex == 1)){
                     if (inputIsValid){
                     	addUserGuess();
                     }
@@ -94,7 +94,7 @@ public class GamePlay {
     
     public Boolean checkValidInput(){
     	
-        if (this.userInputWord.equals(alreadyUsedString)){
+        if (this.userInputWord.equals(previousGuess)){
             System.out.println("try again, must be a unique word");
             this.userInputWord = useScanner();
             return false;
@@ -128,7 +128,7 @@ public class GamePlay {
             for(int charInGeneratedWord=0; charInGeneratedWord<generated_word.length(); charInGeneratedWord++){
             	
                 if((this.userInputWord.charAt(charInUser) == generated_word.charAt(charInGeneratedWord))){
-                    this.compareLetters = true;
+                    this.sameLetter = true;
                     
                     if((charInUser == charInGeneratedWord)){
                         updateFeedback(correctLetterAndSpot, true, charInUser);
@@ -140,7 +140,7 @@ public class GamePlay {
                 }
             }
  
-            if(!compareLetters){
+            if(!sameLetter){
                 updateFalseLetters(this.userInputWord.charAt(charInUser));
             } 
             System.out.print(this.currentFeedback);
@@ -153,7 +153,7 @@ public class GamePlay {
     
     
     public void resetVarsBetweenLetters() {
-    	  this.compareLetters = false;
+    	  this.sameLetter = false;
           this.letterInCorrectSpot = false;
           this.currentFeedback = "";
     }

@@ -79,7 +79,7 @@ public class Wurdle {
     public Boolean runNextRound(int roundIterator) {
         System.out.println("Please enter your guess");
         GamePlay userTurn = new GamePlay(scan, this.guesses, this.feedback, this.incorrectLetters);
-        return userTurn.userSidePlay(roundIterator, this.randomWurdleWord);
+        return userTurn.didUserGuessCorrectly(roundIterator, this.randomWurdleWord);
     }
      
     
@@ -99,7 +99,7 @@ public class Wurdle {
     }
 
     public void chooseRandomWord(){
-        double newIndex = Math.round(Math.random() * 15);
-        this.randomWurdleWord = this.word_list.get((int)newIndex);
+        double randomIndex = Math.round(Math.random() * 15);
+        this.randomWurdleWord = this.word_list.get((int)randomIndex);
     }
 }

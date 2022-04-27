@@ -46,7 +46,7 @@ public class TestUserPlay {
    void testUserSidePlay() {
 	   int roundNum=1; 
 	   String randomWord = "washu";
-	   Boolean correctGuessOnFirstRound = testPlay.userSidePlay(roundNum, randomWord);
+	   Boolean correctGuessOnFirstRound = testPlay.didUserGuessCorrectly(roundNum, randomWord);
 	   assertFalse(correctGuessOnFirstRound);
 	   
    }
@@ -54,7 +54,7 @@ public class TestUserPlay {
    void testUserSidePlay_wonGame() {
 	   int roundNum=1; 
 	   String randomWord = "hello";
-	   Boolean correctGuessOnFirstRound = testPlay.userSidePlay(roundNum, randomWord);
+	   Boolean correctGuessOnFirstRound = testPlay.didUserGuessCorrectly(roundNum, randomWord);
 	   assertTrue(correctGuessOnFirstRound);
 	   
    }
@@ -122,7 +122,7 @@ public class TestUserPlay {
    @Test
        void testInvalidInputDuplicateWord(){
 	    	testPlay.userInputWord = "shook";
-	    	testPlay.alreadyUsedString="shook";
+	    	testPlay.previousGuess="shook";
 	    	
 			Boolean isUniqueWord = testPlay.checkValidInput();
 	
@@ -133,7 +133,7 @@ public class TestUserPlay {
    @Test
    void testValidNonDuplicateWords(){
 	   	testPlay.userInputWord = "shook";
-	   	testPlay.alreadyUsedString="shack";
+	   	testPlay.previousGuess="shack";
    	
 		Boolean isUniqueWord = testPlay.checkValidInput();
 
