@@ -22,9 +22,9 @@ import java.util.Scanner;
 import org.junit.jupiter.api.Test;
 
 public class TestUserPlay {
-	private Wurdle game;
 	private Scanner scan;
-	private GamePlay testPlay;
+    private GamePlay testPlay;
+    
 	@BeforeEach
 	void setup()
 		
@@ -33,8 +33,7 @@ public class TestUserPlay {
     	InputStream in = new ByteArrayInputStream(input.getBytes());
     	System.setIn(in);
 		scan = new Scanner(System.in);
-		
-    	 game = new Wurdle(scan);
+	
     	 ArrayList<String> guesses = new ArrayList<String>();
     	 ArrayList<String> feedback = new ArrayList<String>();
     	 ArrayList<Character> incorrectLetters = new ArrayList<Character>();
@@ -42,8 +41,9 @@ public class TestUserPlay {
  
 	}
   
+    //TEST didUserGuessCorrectly METHOD
    @Test
-   void testUserSidePlay() {
+   void testDidUserGuessCorrectly() {
 	   int roundNum=1; 
 	   String randomWord = "washu";
 	   Boolean correctGuessOnFirstRound = testPlay.didUserGuessCorrectly(roundNum, randomWord);
@@ -51,7 +51,7 @@ public class TestUserPlay {
 	   
    }
    @Test
-   void testUserSidePlay_wonGame() {
+   void testDidUserGuessCorrectly_wonGame() {
 	   int roundNum=1; 
 	   String randomWord = "hello";
 	   Boolean correctGuessOnFirstRound = testPlay.didUserGuessCorrectly(roundNum, randomWord);
@@ -70,6 +70,7 @@ public class TestUserPlay {
 		assertEquals(originalNumGuesses+1, returnedGuesses.size());
 
    }
+   //TEST USER MAKING GUESSES
    @Test
    void testAddGuesses() {
 		
@@ -143,7 +144,7 @@ public class TestUserPlay {
    
    //TEST COMPARE WORDS
    @Test
-   void compareUserAndWurdleWords_singleSameChar_rightSpot() {
+   void testCompareUserAndWurdleWords_singleSameChar_rightSpot() {
 	   testPlay.userInputWord="workd";
 	   String generatedWord = "washu";  
 	   
@@ -161,7 +162,7 @@ public class TestUserPlay {
 	   
    }
    @Test
-   void compareUserAndWurdleWords_singleSameChar_wrongSpot() {
+   void testCompareUserAndWurdleWords_singleSameChar_wrongSpot() {
 	   testPlay.userInputWord="porks";
 	   String generatedWord = "washu"; 
 	   
@@ -176,7 +177,7 @@ public class TestUserPlay {
 	   
    }
    @Test
-   void compareUserAndWurdleWords_multipleSameChar_rightSpot() {
+   void testCompareUserAndWurdleWords_multipleSameChar_rightSpot() {
 	   testPlay.userInputWord="warkd";
 	   String generatedWord = "washu"; 
 	   
@@ -191,7 +192,7 @@ public class TestUserPlay {
 	   
    }
    @Test
-   void compareUserAndWurdleWords_multipleSameChar_wrongSpot() {
+   void testCompareUserAndWurdleWords_multipleSameChar_wrongSpot() {
 	   testPlay.userInputWord="sorka";
 	   String generatedWord = "washu"; 
 	   
@@ -206,7 +207,7 @@ public class TestUserPlay {
 	   
    }
    @Test
-   void compareUserAndWurdleWords_allCorrect() {
+   void testCompareUserAndWurdleWords_allCorrect() {
 	   testPlay.userInputWord="washu";
 	   String generatedWord = "washu"; 
 	   
@@ -221,7 +222,7 @@ public class TestUserPlay {
 	   
    }
    @Test
-   void compareUserAndWurdleWords_allInorrect() { 
+   void testCompareUserAndWurdleWords_allInorrect() { 
 	   testPlay.userInputWord="retin";
 	   String generatedWord = "washu"; 
 	   
@@ -259,6 +260,7 @@ public class TestUserPlay {
 	   assertEquals(testPlay.feedbackOnBoard, "w");
    }
    
+   //TEST UPDATE FEEDBACK
    @Test
    void testUpdateFeedback_correctLetterWrongSpot() {
 	 //for this test, we do not need to input the random word. let's say it is washu here
@@ -279,7 +281,7 @@ public class TestUserPlay {
 	    
 	   assertEquals(testPlay.feedbackOnBoard, "-");
    }
-   
+   //TEST GIVE USER FINAL FEEDBACK
    @Test
    void testGiveUserFeedbackOnEntireWord_correctWord() {
 	   testPlay.correctLetterCounter = 5;
@@ -294,8 +296,7 @@ public class TestUserPlay {
 	   assertFalse(guessIsCorrect);
    } 
    
-    
-
+    //TEST UPDATE INCORRECT LETTERS
 
     @Test 
         void testUpdateFalseLetters(){

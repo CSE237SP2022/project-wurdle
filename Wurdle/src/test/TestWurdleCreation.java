@@ -5,7 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 
 import constructGame.Wurdle;
 import constructGame.WurdleBoard;
-import userPlay.GamePlay;
+
 
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -24,7 +24,6 @@ import org.junit.jupiter.api.Test;
 public class TestWurdleCreation {
 	private Wurdle game;
 	private Scanner scan;
-	private GamePlay testPlay;
 	@BeforeEach
 	void setup()
 		
@@ -33,17 +32,11 @@ public class TestWurdleCreation {
     	InputStream in = new ByteArrayInputStream(input.getBytes());
     	System.setIn(in);
 		scan = new Scanner(System.in);
-		
     	 game = new Wurdle(scan);
-    	 ArrayList<String> guesses = new ArrayList<String>();
-    	 ArrayList<String> feedback = new ArrayList<String>();
-    	 ArrayList<Character> incorrectLetters = new ArrayList<Character>();
-    	 testPlay = new GamePlay(scan, guesses, feedback, incorrectLetters);
  
 	}
   
-
-	//TEST PLAY??
+//TEST IF USER WON
    @Test 
    void testDidUserWin_NoMoreGuesses(){
        int roundNum = 7;
@@ -61,7 +54,9 @@ public class TestWurdleCreation {
        
        assertTrue(wonGame);
 
-	}
+    }
+    
+    //TEST RUNNING USER ROUNDS
    @Test
    void testRunNextRound() {
 	   int roundNum=1; 
@@ -70,7 +65,7 @@ public class TestWurdleCreation {
 	   
    } 
 
-
+//TEST READING IN WORDS
    @Test 
        void testReadWurdleWordsFromFile() throws FileNotFoundException{
    		int originalWordList = game.word_list.size();
@@ -79,7 +74,7 @@ public class TestWurdleCreation {
    		assertEquals(originalWordList+16, addedToWordList);
           
    }
-
+//TEST CHOOSING WORD
    @Test 
        void testChooseRandomWord() throws FileNotFoundException{
    		game.randomWurdleWord="startingWord";
